@@ -4,7 +4,7 @@ import joblib
 from sklearn.base import BaseEstimator, TransformerMixin
 
 # Page Configuration
-st.set_page_config(page_title="ADA 442 - Bank Prediction System", page_icon="🏦", layout="centered")
+st.set_page_config(page_title="ADA 442 - Bank Prediction System", page_icon="📊", layout="centered")
 
 # --- 1. CRITICAL: FeatureEngineer Class Definition ---
 class FeatureEngineer(BaseEstimator, TransformerMixin):
@@ -36,7 +36,7 @@ except Exception as e:
     st.error(f"Failed to load model. Ensure 'bank_marketing_model.pkl' exists. Error: {e}")
 
 # --- 3. App UI ---
-st.title("🏦 Bank Term Deposit Prediction")
+st.title("📊 Bank Term Deposit Prediction")
 st.markdown("""
 This system uses **Neural Networks (MLP)** and **Advanced Feature Engineering** to predict the probability of a client subscribing to a term deposit.
 """)
@@ -83,7 +83,7 @@ st.subheader("Entered Profile Summary")
 st.dataframe(input_df)
 
 # --- 4. Prediction ---
-if st.button("🔮 Calculate Probability"):
+if st.button("⚙️ Calculate Probability"):
     with st.spinner("Neural Network is analyzing..."):
         prediction = model.predict(input_df)
         probability = model.predict_proba(input_df)[0][1]
